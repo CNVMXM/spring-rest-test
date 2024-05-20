@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  #############################################################################
+  ###### Data Bases ###########################################################
+  #############################################################################
+
+  postgres-test:
+    container_name: test-service-db
+    image: postgres:14
+    environment:
+      POSTGRES_DB: test-service
+      POSTGRES_USER: cnvmxm
+      POSTGRES_PASSWORD: cnvmxm
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./volumes/customer:/data/postgres
